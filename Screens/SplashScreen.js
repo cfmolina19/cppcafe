@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Button, Alert, Image } from "react-native";
 import { Card } from "react-native-paper";
 import Asset from "../components/Asset";
 import { Constants } from "expo";
+import { withTheme } from "@callstack/react-theme-provider";
 
 const lang = {
   en: {
@@ -30,6 +31,8 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     textAlign: "center"
+    // ,
+    // backgroundColor: "white"
   }
 });
 
@@ -57,6 +60,7 @@ class SplashScreen extends React.Component {
       lang: "es"
     });
   }
+
   render() {
     return (
       <View style={styles.container}>
@@ -64,43 +68,69 @@ class SplashScreen extends React.Component {
           <Text style={styles.title}>C++ Café</Text>
         </View>
 
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, borderRadius: 25 }}>
           <Button
             onPress={() =>
-              //going to mod 1 instead of homescreen for now
-              this.props.navigation.navigate("Module1", {
+              //going to mod 1 instead of Menu for now
+              this.props.navigation.navigate("Module", {
                 lang: this.state.lang
               })
             }
             title="Menu"
+            style={{
+              borderRadius: 25
+            }}
           />
 
           <Text>{"\n"}</Text>
 
           <View style={{ flexDirection: "row" }}>
-            <View style={{ flex: 1 }} />
-            <View style={{ flex: 1 }}>
+            {/* <View style={{ flex: 1 }} /> */}
+            <View
+              style={{
+                flex: 1,
+                paddingLeft: 10,
+                paddingRight: 10,
+                borderRadius: 25
+              }}
+            >
               <Button
                 title="PT"
                 onPress={this._LangPT}
-                style={{ justifyContent: "flex-start" }}
+                style={{
+                  justifyContent: "flex-start",
+                  borderRadius: 25
+                }}
               />
             </View>
-            <Text> </Text>
-            <View style={{ flex: 1 }}>
+            {/* <Text> </Text> */}
+            <View
+              style={{
+                flex: 1,
+                paddingLeft: 10,
+                paddingRight: 10,
+                borderRadius: 25
+              }}
+            >
               <Button
                 title="ES"
                 onPress={this._LangES}
-                style={{ justifyContent: "flex-end" }}
+                style={{
+                  justifyContent: "flex-end",
+                  borderRadius: 25
+                }}
               />
             </View>
-            <View style={{ flex: 1 }} />
+            {/* <View style={{ flex: 1 }} /> */}
           </View>
         </View>
 
-        <View style={{ flex: 5 }}>
-          <Card style={{ flex: 1 }}>
-            <Asset lang={this.state.lang} style={{ flex: 1 }} />
+        <View style={{ flex: 5, borderRadius: 25 }}>
+          <Card style={{ flex: 1, borderRadius: 25 }}>
+            <Asset
+              lang={this.state.lang}
+              style={{ flex: 1, borderRadius: 25 }}
+            />
           </Card>
         </View>
       </View>

@@ -26,7 +26,7 @@ const ITEMS = [
   ""
 ];
 
-export default class HomeScreen extends Component {
+export default class Menu extends Component {
   constructor(props) {
     super(props);
 
