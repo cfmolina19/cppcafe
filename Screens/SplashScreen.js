@@ -19,16 +19,6 @@ const lang = {
   }
 };
 
-// const pt = {
-//   Wel:
-//     "Bem-vindo a C++ Café! Este aplicativo foi criado para ensinar a língua C++ diretamente do seu celular. Meu nome é Cafeína, e vou ser a sua professora. O mundo de programação e computação pode abrir muitas portas na sua vida, e estamos animados para ensinar tudo que você precisa para que possa programar em C++. Vamos lá!",
-//   bar: "Bar {{someValue}}"
-// };
-// const es = {
-//   Welcome: "como telle fous",
-//   bar: "chatouiller {{someValue}}"
-// };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -44,11 +34,6 @@ const styles = StyleSheet.create({
     textAlign: "center"
   }
 });
-
-// i18n.fallbacks = true;
-// i18n.translations = { pt, es };
-
-//i18n.locale = Localization.locale;
 
 class SplashScreen extends React.Component {
   constructor(props) {
@@ -89,12 +74,6 @@ class SplashScreen extends React.Component {
           }
           title="Menu"
         />
-
-        {/* this.props.navigation.navigate('Details', {
-              itemId: 86,
-              otherParam: 'anything you want here',
-            }); */}
-
         <Button title="PT" onPress={this._LangPT} />
         <Button title="ES" onPress={this._LangES} />
         <Card>

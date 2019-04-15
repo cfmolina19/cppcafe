@@ -54,9 +54,6 @@ const lang = {
   }
 };
 
-//i18n.fallbacks = true;
-//i18n.translations = { pt, es };
-
 class Module1 extends React.Component {
   constructor(props) {
     super(props);
