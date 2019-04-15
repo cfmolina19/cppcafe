@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, Button, Alert, Image } from "react-native";
 import { Card } from "react-native-paper";
 import Mod1Cont from "../components/Mod1Cont";
-import Mod2Cont from "../components/Mod1Cont";
+import Mod2Cont from "../components/Mod2Cont";
 import { Constants } from "expo";
 
 const styles = StyleSheet.create({
@@ -63,6 +63,7 @@ class Module extends React.Component {
     };
     this._NextPage = this._NextPage.bind(this);
     this._LastPage = this._LastPage.bind(this);
+    this._NextModule = this._NextModule.bind(this);
   }
 
   _NextPage() {
@@ -77,13 +78,21 @@ class Module extends React.Component {
     });
   }
 
+  _NextModule() {
+    this.setState({
+      module: this.state.module + 1,
+      page: 1
+    });
+  }
+
   render() {
     const { navigation } = this.props;
-    const propLang = navigation.getParam("lang", "notpassing");
+    const propLang = navigation.getParam("lang", "en");
 
     let lastPageBtn;
     let nextPageBtn;
     let quizBtn;
+    let lesson;
 
     if (this.state.page > 1) {
       lastPageBtn = <Button title="Last Page" onPress={this._LastPage} />;
@@ -99,15 +108,33 @@ class Module extends React.Component {
         />
       );
     }
-    return (
-      <View style={styles.container}>
-        <Text style={styles.title}>
-          {lang[propLang].title[this.state.module]}
-        </Text>
 
+    //NEEDS REWORK - module content rendering
+    if (this.state.module == 1) {
+      lesson = (
         <Card style={{ flex: 1 }}>
           <Mod1Cont lang={propLang} page={this.state.page} />
         </Card>
+      );
+    }
+
+    if (this.state.module == 2) {
+      lesson = (
+        <Card style={{ flex: 1 }}>
+          <Mod2Cont lang={propLang} page={this.state.page} />
+        </Card>
+      );
+    }
+
+    return (
+      <View style={styles.container}>
+        <Text style={styles.title}>
+          {/* {lang[propLang].title[this.props.mod]} */}
+          {lang[propLang].title[this.state.module]}
+        </Text>
+        <Button title="Next Module" onPress={this._NextModule} />
+
+        {lesson}
 
         <View style={{ flexDirection: "row", padding: 10 }}>
           <View style={{ flex: 3 }}>{lastPageBtn}</View>

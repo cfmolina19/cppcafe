@@ -10,15 +10,15 @@ const lang = {
     page: {
       1: {
         text:
-          "Almost all programmers start programming simple programs. No program is more infamous than “Hello world”. Before we look at our first hello world program, let’s look at the main components of a c++ program, from top to bottom.",
+          "Hey programmer! Welcome back to C++ café. In this module, we will learn about variables and conditional statements. Let’s look back at our hello world program from module 1. Did you notice something in front of the “main” function? That’s right! What you see is INT. This is an example of a type. Any function or variable has a type. Here are a list of common types…\n\nInt, String, Char, Void\n\nInt is short for integer.\n\n[[[[“Integer” - (definition)]]]]\n\nInts are simply numbers, like 1, 2, and 3!",
         vocabDef: "",
         imagePath: "../assets/caffeina.png",
-        vocabWord: ""
+        vocabWord: "Integer"
       },
       2: {
         text:
-          "Since c++ is an english based programming language, it is useful to learn some english words. At the very top of c++ programs, we will see something we call, libraries, or (spanish/portuguese word). Think of libraries as tool kits. For some tasks, we need to have specific tools. We need to remember to include these tools so that we have access to them when needed. In english include means",
-        vocabWord: "Include",
+          "Now that we know what types are, let’s look at what they describe. Do you remember what types describe?\n\nGreat! As we learned previously, types can describe functions and variables. Let’s first look at variables. We will talk about defining functions later. Below is the structure of defining a variable.",
+        vocabWord: "Programs and Libraries",
         vocabDef: "Include: Para incluir",
         imagePath: "../assets/code.png"
       },
@@ -72,18 +72,58 @@ const lang = {
     page: {
       1: {
         text:
-          "Casi todos los programadores empiezan a programar cosas básicas. Ningún programa tiene más fama que el que es llamada “Bienvenido al mundo.” Antes de empezar con este programa, aprendamos sobre los ingredientes más esenciales de un programa en C++.",
-        vocabDef: "",
+          "Olá, Programador! Bem-vindo de volta ao C++ Café! Neste capítulo, aprendemos sobre variáveis e declarações condicionais. Vamos rever nosso programa do primeiro capítulo, Olá mundo. Você percebe algo na frente da função Main? Claro! É um INT. Isso é um exemplo de um variável. Qualquer função ou variável tem algum tipo. Aqui tem uma lista de tipos comuns...\n\nInt, String, Char, Void\n\nINT é a abreviatura para Integer\n\nInts são simplesmente numeros, como 1, 2, e 3!",
+        vocabDef: "Integer: Número Inteiro",
         imagePath: "",
-        vocabWord: ""
+        vocabWord: "Integer"
       },
       2: {
         text:
-          "Como C++ é uma linguagem baseada em inglês, é importante aprender algumas palavras inglesas. Em cada programa de C, é normal iniciar com libraries, ou bibliotecas. Pense nisso como caixas de ferramentas. Para conseguir tarefas específicas, precisamos ter ferramentas adequadas. Também, a gente tem que lembrar incluir estas ferramentas para ter acesso a elas. Em inglês, a palavra include se traduz para incluir",
-        vocabWord: "",
-        vocabDef: "",
+          "Agora que sabemos sobre os tipos de C++, vamos ver o que significam. Você se lembra do que os tipos descrevem?\n\nÓtimo! Como aprendemos antes, tipos em programação podem descrever funções e  variáveis. Abaixo tem o estrutura para definir uma variável.",
+        vocabWord: "Programs and Libraries",
+        vocabDef: "Correto",
         imagePath: "../assets/code.png",
         header: ""
+      },
+      3: {
+        text:
+          "Vemos que a função é de tipo void. Uma função com tipo void, não nos entrega um resultado.\nAgora vemos a variavel de tipo INT. Você se lembra que significa o variavel int?",
+        vocabWord: "Integer",
+        vocabDef: "Integer: Numero entero",
+        imagePath: "../assets/code.png"
+      },
+      4: {
+        text:
+          "Agora, vamos falar do tipo “string”. Esta palavra não se traduz facilmente, mas tem que confiar em mim! \nUm string é basicamente uma, como “exemplo”. O motivo que se chama string é porque é uma coleção de letras. Isso pode ser identificado como um string -\n S-t-r-i-n-g\nAgora entende? Cada letra forma uma parte do String",
+        vocabWord: "String",
+        vocabDef: "String: colección de las letras",
+        imagePath: "../assets/code.png"
+      },
+      5: {
+        text:
+          "Characters são letras individuais como a, b, c, ou d.\n\nPercebe que aquelas variáveis têm nomes diferentes? Podemos dar qualquer nome ou apelido a cada variável, mas devemos tentar denominar-los de maneira que faz sentido com o propósito dela.\n\n Por exemplo, uma variável com o nome de word provavelmente seja de tipo String. É boa prática fazer a denominação para que qualquer pessoa pode entender o que programamos!Quando os tipos são usados para descrever os variáveis, devemos devolver um resultado com um variável de tipo igual do tipo de função.\n\nPor exemplo...",
+        vocabWord: "Character",
+        vocabDef: "Character: Letra individual",
+        imagePath: "../assets/code.png"
+      },
+      6: {
+        text:
+          "Bom trabalho! Agora que sabemos todo sobre os tipos, aprenderemos sobre algo fundamental - declarações condicionais. \nVamos ver um exemplo de declaração condicional e depois analisaremos. \nVê as palavras inglesas que aparecem no primeiro condicional? Qual palavras formam parte da declaração condicional?",
+        vocabWord: "IF & ELSE",
+        vocabDef: "IF: SE... ELSE: Em vez que",
+        imagePath: "../assets/code.png"
+      },
+      7: {
+        text:
+          "Partes da declaração condicional são if y else. \n A primeira parte do condicional é if. Em () de if, especificamos o condicional. Se este condição é satisfeita, o programa continua com o code depois de if, dentro dos { }. Se a condição de if não é satisfeita, o programa ignora o if e salta para o que fica dentro de else, neste caso, resultaria num return de 0.",
+        vocabDef: "",
+        imagePath: "../assets/code.png"
+      },
+      8: {
+        text: "Genial! Nuestro primer programa funciona!",
+        vocabWord: "",
+        vocabDef: "",
+        imagePath: "../assets/code.png"
       }
     }
   },
@@ -92,54 +132,52 @@ const lang = {
     page: {
       1: {
         text:
-          "Casi todos los programadores empiezan a programar cosas básicas. Ningún programa tiene más fama que el que es llamada “Bienvenido al mundo.”\n\nAntes de empezar con este programa, aprendamos sobre los ingredientes más esenciales de un programa en C++.",
-        vocabDef: "",
+          "Hola programador! Bienvenido de regreso a C++ Cafe. En este capítulo aprenderemos sobre variables y declaraciones condicionales. Repasemos nuestro programa del primer capítulo, bienvenido al mundo. Notaste algo después de nuestra función principal? Correcto! Lo que ves es un INT. Este es un ejemplo de un tipo. Cualquier función o variable tiene un tipo. Esta es una lista de tipos comunes...\n\nInt, String, Char, Void\n\nINT es la abreviatura para número entero.\n\nInts o números enteros son como 1, 2, y 3.",
+        vocabDef: "Integer: número entero",
         imagePath: "../assets/caffeina.png",
-        vocabWord: ""
+        vocabWord: "Integer"
       },
       2: {
         text:
-          "Como C++ es un lenguaje creado en inglés, es importante aprender ciertas palabras.\n\nEn cada programa de C++ vamos a ver algo llamado libraries, o bibliotecas. Estas bibliotecas son cajas de herramientas. Para cumplir algunas metas, necesitamos usar ciertas herramientas.\n\nNecesitamos acordarnos de incluir a estas herramientas para poder accederlas cuando las necesitemos. Otra palabra, include, significa incluir.",
+          "Ahora que sabemos que son tipos, miremos a ver que describen. Recuerdas que significa cada tipo?\n\nGenial!\n\nComo aprendimos antes, tipos puedes describir funciones y variables. Primero miremos a los variables. Vamos a hablar sobre funciones despues. Abajo puedes ver una estrucutra para definir un variable.",
         vocabWord: "Include",
         vocabDef: "Include:\nIncluir recursos de codigo",
         imagePath: "../assets/code.png"
       },
       3: {
         text:
-          "Ahora vamos a ver algo llamada una *function*. Solo vamos a estar trabajando con una función llamada *main* o principal por ahora.\n\nFunciones pueden tener cualquier nombre, y los nombres normalmente dicen mucho de su propósito. Puedes imaginarte que la función de main como la sala de espera de una oficina. Todos los otros cuartos terminan regresando a ella.",
-        vocabWord: "Main",
-        vocabDef: "Main:\nFuncion principal",
+          "Vemos que la función es de tipo void.Una función con tipo void no nos entregará un resultado.\n Ahora vemos el variable tipo INT. Recuerdas que significa el variable int?",
+        vocabWord: "Integer",
+        vocabDef: "Integer: Numero entero",
         imagePath: "../assets/code.png"
       },
       4: {
         text:
-          "Funciones contienen {...}.\n\nLa primera { indican el comienzo de la función y la última } indica su final.\n\nAdentro de ellas es donde tendremos nuestro primer programa de bienvenido al mundo. Antes de esto, repasemos un poco nuestro vocabulario.",
-        vocabWord: "Nuevas palabras",
-        vocabDef:
-          "Main:\nFuncion principal\n\nInclude:\nIncluir recursos de codigo\n\nSuper!",
+          "Ahora, hablemos sobre el tipo “string”. Esto no traduce fácilmente, pero tendras que confiar en mi!\nUn string es básicamente una palabra, como “ejemplo”. La razón por la cual se llama string es porque es una colección de letras. Esto puede ser identificado como un string: \nS-t-r-i-n-g \n\nLo ves? Cada letra forma parte de el string",
+        vocabWord: "String",
+        vocabDef: "String: colección de las letras",
         imagePath: "../assets/code.png"
       },
       5: {
         text:
-          "Excelente trabajo!\n\nAhora, entre los soportes necesitamos escribir nuestro programa de bienvenido al mundo! El propósito del programa *bienvenido al mundo* es para imprimir *bienvenido al mundo* a la pantalla.\n\nSi queremos imprimir algo necesitamos las herramientas indicadas para imprimir.\n\nDonde es que conseguimos nuestras herramientas?",
-        vocabWord: "Library",
-        vocabDef:
-          "Library: Biblioteca! \n\nExcelente! La library que necesitamos en este caso para imprimir se llama iostream. Ahora que tenemos nuestra biblioteca, usemosla! Para imprimir podemos usar el formato, cout << “...” << endl;",
+          "Characters son letras individuales como a, b, c, o d. \n\nHas notado que estos variables tienen diferentes nombres? Podemos darle cualquier apodo a cada variable, pero deberíamos intentar en identificarlos de tal manera que haga sentido con su propósito. Por ejemplo, un variable con el nombre word hace sentido que sea de tipo string. Es buena práctica hacer esto para que cualquier persona pueda entender lo que programamos! \n\nCuando los tipos son usados para describir los variables, debemos devolver un resultado con un variable o valor que comparta el mismo tipo.\n\nPor ejemplo...",
+        vocabWord: "Character",
+        vocabDef: "Character: Letra individual",
         imagePath: "../assets/code.png"
       },
       6: {
         text:
           "Tenemos bastantes preguntas nuevas! Repasemoslas.\n\nProbablemente notaste que cout se ve diferente que out y endl de end. \nCout es simplemente el hecho de imprimir el texto en el lenguaje C. \nEndl se puede considerar como fin de línea. Esto significa que al imprimir en la pantalla, la computadora empezaria una nueva línea.",
-        vocabWord: "Out / End",
-        vocabDef: "Out / End\nFuera / Fin",
+        vocabWord: "IF & ELSE",
+        vocabDef: "IF: Si. ELSE: En vez que",
         imagePath: "../assets/code.png"
       },
       7: {
         text:
-          "Bueno! Ahora estamos listos para terminar nuestro programa.\n\nHay muchas funciones que requieren que el usuario retorne un valor. Esto es usado más con programas avanzados - por ahora simplemente retornemos un 0. \n\nListo! Ahora estamos listos para ensayar nuestro programa. Veamos que vamos a imprimir en la pantalla.",
-        vocabWord: "Toque aqui para compilar este Code",
-        vocabDef: "Compilado!",
-        imagePath: "../assets/code.png"
+          "Partes de la declaración condicional son if y else. \n La primera parte del condicional es if. En () para if, especificamos la condicional. Si esta condición resulta ser cierta ingresamos y ejecutaremos lo que contiene por dentro { }. Si sucede resultaría en un hecho, 1, y si no resultaría en un 0.",
+        vocabDef: "",
+        imagePath: "../assets/code.png",
+        vocabWord: ""
       },
       8: {
         text: "Genial! Nuestro primer programa funciona!",
@@ -205,30 +243,42 @@ export default class AssetExample extends React.Component {
       }
       if (this.props.page == 2) {
         image = (
-          <Image style={styles.image} source={require("../assets/code.png")} />
+          <Image
+            style={styles.image}
+            source={require("../assets/types-for-variables.png")}
+          />
         );
       }
       if (this.props.page == 3) {
         image = (
-          <Image style={styles.image} source={require("../assets/code.png")} />
+          <Image
+            style={styles.image}
+            source={require("../assets/types-for-variables.png")}
+          />
         );
       }
       if (this.props.page == 4) {
         image = (
-          <Image style={styles.image} source={require("../assets/code.png")} />
+          <Image
+            style={styles.image}
+            source={require("../assets/types-for-variables.png")}
+          />
         );
       }
       if (this.props.page == 5) {
         image = (
           <Image
             style={styles.image}
-            source={require("../assets/caffeina.png")}
+            source={require("../assets/type-returns.png")}
           />
         );
       }
       if (this.props.page == 6) {
         image = (
-          <Image style={styles.image} source={require("../assets/code.png")} />
+          <Image
+            style={styles.image}
+            source={require("../assets/type-returns.png")}
+          />
         );
       }
       if (this.props.page == 7) {
