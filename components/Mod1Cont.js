@@ -200,15 +200,44 @@ export default class AssetExample extends React.Component {
 
     return (
       <View style={styles.container}>
-        {textShown}
-        <Text>{"\n"}</Text>
-        {vocabBtn}
-        <Text>{"\n"}</Text>
-        {image}
-        {/* <Text>{lang[this.props.lang].page[this.props.page].imagePath}</Text> */}
-        <Text>
-          {"\n"}Lesson {this.props.page}/8
-        </Text>
+        <View
+          style={{
+            height: "40%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+          }}
+        >
+          {textShown}
+        </View>
+
+        <View
+          style={{
+            height: "10%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+          }}
+        >
+          {vocabBtn}
+        </View>
+
+        <View
+          style={{
+            height: "40%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+          }}
+        >
+          {image}
+        </View>
+
+        <View style={{ height: "10%" }}>
+          <Text>
+            {"\n"}Lesson {this.props.page}/8
+          </Text>
+        </View>
       </View>
     );
   }

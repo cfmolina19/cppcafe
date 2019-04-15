@@ -3,9 +3,6 @@ import { View, Text, StyleSheet, Button, Alert, Image } from "react-native";
 import { Card } from "react-native-paper";
 import Asset from "../components/Mod1Cont";
 import { Constants } from "expo";
-import { Localization } from "expo";
-import i18n from "i18n-js";
-import { Ionicons } from "@expo/vector-icons";
 
 const styles = StyleSheet.create({
   container: {
@@ -41,15 +38,18 @@ const lang = {
   },
   en: {
     sel: "english",
-    title: "Module 1 - Introduction"
+    title1: "Module 1 - Introduction",
+    title2: "Module 2 - Data Types, Variables, Conditional Statements",
+    title3: "Module 3 - Arrays, Strings",
+    title4: "Module 4 - Loops"
   },
   pt: {
     sel: "portuguese",
-    title: "Módulo 1 - Introdução"
+    title1: "Módulo 1 - Introdução"
   },
   es: {
     sel: "spanish",
-    title: "Module 1 - Introducción"
+    title1: "Module 1 - Introducción"
   }
 };
 
@@ -101,13 +101,19 @@ class Module1 extends React.Component {
       <View style={styles.container}>
         <Text style={styles.title}>{lang[propLang].title}</Text>
 
-        <Card>
+        <Card style={{ flex: 1 }}>
           <Asset lang={propLang} page={this.state.page} />
         </Card>
 
-        {lastPageBtn}
-        {nextPageBtn}
-        {quizBtn}
+        <View style={{ flexDirection: "row" }}>
+          {/* <View style={{ flex: 1 }} /> */}
+          <View style={{ flex: 3 }}>{lastPageBtn}</View>
+          {/* <View style={{ flex: 1 }} /> */}
+          <View style={{ flex: 3 }}>{quizBtn}</View>
+          {/* <View style={{ flex: 1 }} /> */}
+          <View style={{ flex: 3 }}>{nextPageBtn}</View>
+          {/* <View style={{ flex: 1 }} /> */}
+        </View>
       </View>
     );
   }
