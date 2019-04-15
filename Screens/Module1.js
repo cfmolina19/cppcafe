@@ -36,46 +36,84 @@ const styles = StyleSheet.create({
 // While loops
 
 const lang = {
+  all: {
+    pages: 5
+  },
   en: {
     sel: "english",
-    title: "Module One - Introduction",
+    title: "Module 1 - Introduction",
     pg1: "en 1st Page Content",
     pg2: "en 2nd Page Content"
   },
   pt: {
     sel: "portuguese",
+    title: "Módulo 1 - Introdução",
     pg1: "pt 1st Page Content",
     pg2: "pt 2nd Page Content"
   },
   es: {
     sel: "spanish",
+    title: "Module 1 - Introducción",
     pg1: "spa 1st Page Content",
     pg2: "spa 2nd Page Content"
   }
 };
 
-//i18n.fallbacks = true;
-//i18n.translations = { pt, es };
-
 class Module1 extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      page: 1
+    };
+    this._NextPage = this._NextPage.bind(this);
+    this._LastPage = this._LastPage.bind(this);
   }
+
+  _NextPage() {
+    this.setState({
+      page: this.state.page + 1
+    });
+  }
+
+  _LastPage() {
+    this.setState({
+      page: this.state.page - 1
+    });
+  }
+
   render() {
     const { navigation } = this.props;
     const propLang = navigation.getParam("lang", "notpassing");
 
+    let lastPageBtn;
+    let nextPageBtn;
+    let quizBtn;
+
+    if (this.state.page > 1) {
+      lastPageBtn = <Button title="Last Page" onPress={this._LastPage} />;
+    }
+    if (this.state.page < lang.all.pages) {
+      nextPageBtn = <Button title="Next Page" onPress={this._NextPage} />;
+    }
+    if (this.state.page == lang.all.pages) {
+      quizBtn = (
+        <Button
+          onPress={() => this.props.navigation.navigate("quiz")}
+          title="Quiz"
+        />
+      );
+    }
     return (
       <View style={styles.container}>
-        <Text style={styles.paragraph}>Module 1: {lang[propLang].title}</Text>
-        {/* <Button
-          onPress={() => this.props.navigation.navigate("Module1_2")}
-          title="Next"
-        /> */}
+        <Text style={styles.paragraph}>{lang[propLang].title}</Text>
 
         <Card>
-          <Asset lang={propLang} />
+          <Asset lang={propLang} page={this.state.page} />
         </Card>
+
+        {lastPageBtn}
+        {nextPageBtn}
+        {quizBtn}
       </View>
     );
   }

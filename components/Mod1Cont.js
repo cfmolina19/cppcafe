@@ -16,54 +16,100 @@ const lang = {
   },
   pt: {
     sel: "portuguese",
-    pg1: "pt 1st Page Content",
-    pg2: "pt 2nd Page Content"
+    page: {
+      1: {
+        text:
+          "Quase todos os programadores começar a programar com programas básicos. Nenhum programa é mais popular para aprender que o chamado “Hello, World”, ou “Olá, Mundo”. Antes de começar a programar, vamos olhar nas ingredientes essenciais de um programa de C++.",
+        vocab: "",
+        imagePath: "",
+        word: ""
+      },
+      2: {
+        text:
+          "Como C++ é uma linguagem baseada em inglês, é importante aprender algumas palavras inglesas. Em cada programa de C, é normal iniciar com libraries, ou bibliotecas. Pense nisso como caixas de ferramentas. Para conseguir tarefas específicas, precisamos ter ferramentas adequadas. Também, a gente tem que lembrar incluir estas ferramentas para ter acesso a elas. Em inglês, a palavra include se traduz para incluir",
+        vocab: "",
+        imagePath: "../assets/code.png",
+        header: ""
+      }
+    }
   },
   es: {
     sel: "spanish",
-    pg1: "spa 1st Page Content",
-    pg2: "spa 2nd Page Content"
+    page: {
+      1: "Casi todos los programadores empiezan a programar cosas básicas. Ningún programa tiene más fama que el que es llamada “Bienvenido al mundo.” Antes de empezar con este programa, aprendamos sobre los ingredientes más esenciales de un programa en C++.",
+      2: "en 2nd page content"
+    }
   }
 };
 
 export default class AssetExample extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      page: 1
-    };
-    this._NextPage = this._NextPage.bind(this);
-    this._LastPage = this._LastPage.bind(this);
   }
 
-  _NextPage() {
-    this.setState({
-      page: this.state.page + 1
-    });
-  }
-
-  _LastPage() {
-    this.setState({
-      page: this.state.page - 1
-    });
+  _vocab() {
+    Alert.alert(lang[this.props.lang].page[this.props.page].vocab);
   }
 
   render() {
+    let textShown;
+    let vocabBtn;
+    let image;
+
+    //text exists
+    if (lang[this.props.lang].page[this.props.page].text) {
+      textShown = (
+        <Text>{lang[this.props.lang].page[this.props.page].text}</Text>
+      );
+    }
+
+    //vocab exists
+    if (
+      lang[this.props.lang].page[this.props.page].vocab &&
+      lang[this.props.lang].page[this.props.page].word
+    ) {
+      vocabBtn = <Button title="Include" onPress={this._vocab} />;
+    }
+
+    //image exists
+    if (lang[this.props.lang].page[this.props.page].imagePath) {
+      image = (
+        <Image style={styles.image} source={require("../assets/code.png")} />
+      );
+    }
+
+    // if (this.props.page == 2) {
+    //   alertBtn = <Button title="Include" onPress={this._vocab} />;
+    //   image = (
+    //     <Image
+    //       style={styles.alertImage}
+    //       source={require("../assets/code.png")}
+    //     />
+    //   );
+    // }
+
+    //image exists
+
+    //Main
+    // if (this.props.page == 3) {
+    //   alertBtn = <Button title="Include" onPress={this._vocab} />;
+    //   image = (
+    //     <Image
+    //       style={styles.alertImage}
+    //       source={require("../assets/code.png")}
+    //     />
+    //   );
+    // }
+
     return (
       <View style={styles.container}>
-        <Text>TEST MOD 1 ASSET</Text>
-        <Text>{lang[this.props.lang].page[this.state.page]}</Text>
-        {/* <Text>{this.props.lang}</Text>
-        <Text>{this.state.page}</Text>
-        <Text>{lang[this.props.lang].sel}</Text> */}
-        <Image style={styles.logo} source={require("../assets/caffeina.png")} />
-        <Button title="Next Page" onPress={this._NextPage} />
-        <Button title="Last Page" onPress={this._LastPage} />
+        {/* <Text>{lang[this.props.lang].page[this.props.page].text}</Text> */}
 
-        {/* <Button
-          onPress={() => this.props.navigation.navigate("Module1_2")}
-          title="Next"
-        /> */}
+        {textShown}
+        {vocabBtn}
+        {image}
+
+        {/* <Image style={styles.logo} source={require("../assets/caffeina.png")} /> */}
       </View>
     );
   }
@@ -86,5 +132,9 @@ const styles = StyleSheet.create({
   logo: {
     height: 128,
     width: 128
+  },
+  image: {
+    height: 150,
+    width: 350
   }
 });
