@@ -3,9 +3,6 @@ import { View, Text, StyleSheet, Button, Alert, Image } from "react-native";
 import { Card } from "react-native-paper";
 import Asset from "../components/Asset";
 import { Constants } from "expo";
-import { Localization } from "expo";
-import i18n from "i18n-js";
-import { Ionicons } from "@expo/vector-icons";
 
 const lang = {
   en: {
@@ -22,14 +19,15 @@ const lang = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    height: "100%",
     justifyContent: "center",
     paddingTop: Constants.statusBarHeight,
     backgroundColor: "#D2691E",
-    padding: 0
+    padding: 10
   },
-  paragraph: {
+  title: {
     margin: 24,
-    fontSize: 18,
+    fontSize: 30,
     fontWeight: "bold",
     textAlign: "center"
   }
@@ -47,16 +45,14 @@ class SplashScreen extends React.Component {
   }
 
   _LangPT() {
-    Alert.alert("PT");
-    i18n.locale = "pt";
+    Alert.alert("Idioma alterado para português");
     this.setState({
       lang: "pt"
     });
   }
 
   _LangES() {
-    Alert.alert("ES");
-    i18n.locale = "es";
+    Alert.alert("Idioma cambiado a español");
     this.setState({
       lang: "es"
     });
@@ -64,21 +60,49 @@ class SplashScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.paragraph}>C++ Café</Text>
-        <Button
-          onPress={() =>
-            //going to mod 1 instead of homescreen for now
-            this.props.navigation.navigate("Module1", {
-              lang: this.state.lang
-            })
-          }
-          title="Menu"
-        />
-        <Button title="PT" onPress={this._LangPT} />
-        <Button title="ES" onPress={this._LangES} />
-        <Card>
-          <Asset lang={this.state.lang} />
-        </Card>
+        <View style={{ flex: 1 }}>
+          <Text style={styles.title}>C++ Café</Text>
+        </View>
+
+        <View style={{ flex: 1 }}>
+          <Button
+            onPress={() =>
+              //going to mod 1 instead of homescreen for now
+              this.props.navigation.navigate("Module1", {
+                lang: this.state.lang
+              })
+            }
+            title="Menu"
+          />
+
+          <Text>{"\n"}</Text>
+
+          <View style={{ flexDirection: "row" }}>
+            <View style={{ flex: 1 }} />
+            <View style={{ flex: 1 }}>
+              <Button
+                title="PT"
+                onPress={this._LangPT}
+                style={{ justifyContent: "flex-start" }}
+              />
+            </View>
+            <Text> </Text>
+            <View style={{ flex: 1 }}>
+              <Button
+                title="ES"
+                onPress={this._LangES}
+                style={{ justifyContent: "flex-end" }}
+              />
+            </View>
+            <View style={{ flex: 1 }} />
+          </View>
+        </View>
+
+        <View style={{ flex: 5 }}>
+          <Card style={{ flex: 1 }}>
+            <Asset lang={this.state.lang} style={{ flex: 1 }} />
+          </Card>
+        </View>
       </View>
     );
   }

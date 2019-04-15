@@ -15,9 +15,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#D2691E",
     padding: 0
   },
-  paragraph: {
+  title: {
     margin: 24,
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: "bold",
     textAlign: "center"
   }
@@ -37,25 +37,19 @@ const styles = StyleSheet.create({
 
 const lang = {
   all: {
-    pages: 5
+    pages: 8
   },
   en: {
     sel: "english",
-    title: "Module 1 - Introduction",
-    pg1: "en 1st Page Content",
-    pg2: "en 2nd Page Content"
+    title: "Module 1 - Introduction"
   },
   pt: {
     sel: "portuguese",
-    title: "Módulo 1 - Introdução",
-    pg1: "pt 1st Page Content",
-    pg2: "pt 2nd Page Content"
+    title: "Módulo 1 - Introdução"
   },
   es: {
     sel: "spanish",
-    title: "Module 1 - Introducción",
-    pg1: "spa 1st Page Content",
-    pg2: "spa 2nd Page Content"
+    title: "Module 1 - Introducción"
   }
 };
 
@@ -105,7 +99,7 @@ class Module1 extends React.Component {
     }
     return (
       <View style={styles.container}>
-        <Text style={styles.paragraph}>{lang[propLang].title}</Text>
+        <Text style={styles.title}>{lang[propLang].title}</Text>
 
         <Card>
           <Asset lang={propLang} page={this.state.page} />
