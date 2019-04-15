@@ -78,38 +78,11 @@ export default class AssetExample extends React.Component {
       );
     }
 
-    // if (this.props.page == 2) {
-    //   alertBtn = <Button title="Include" onPress={this._vocab} />;
-    //   image = (
-    //     <Image
-    //       style={styles.alertImage}
-    //       source={require("../assets/code.png")}
-    //     />
-    //   );
-    // }
-
-    //image exists
-
-    //Main
-    // if (this.props.page == 3) {
-    //   alertBtn = <Button title="Include" onPress={this._vocab} />;
-    //   image = (
-    //     <Image
-    //       style={styles.alertImage}
-    //       source={require("../assets/code.png")}
-    //     />
-    //   );
-    // }
-
     return (
       <View style={styles.container}>
-        {/* <Text>{lang[this.props.lang].page[this.props.page].text}</Text> */}
-
         {textShown}
         {vocabBtn}
         {image}
-
-        {/* <Image style={styles.logo} source={require("../assets/caffeina.png")} /> */}
       </View>
     );
   }
