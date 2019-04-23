@@ -54,7 +54,7 @@ const lang = {
   }
 };
 
-class Module extends React.Component {
+export default class Menu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -62,15 +62,14 @@ class Module extends React.Component {
       page: 1
     };
 
-    this._ModOne = this._ModOne.bind(this);
+    // this._ModOne = this._ModOne.bind(this);
   }
 
-  _ModOne() {
-    this.setState({
-      // page: this.state.page + 1,
-      module: 1
-    });
-  }
+  // _ModOne() {
+  //   this.setState({
+  //     module: 1
+  //   });
+  // }
 
   render() {
     const { navigation } = this.props;
@@ -80,36 +79,38 @@ class Module extends React.Component {
       <View style={styles.container}>
         <Text style={styles.title}>{lang[propLang].title}</Text>
 
-        <View
-          style={{
-            flexDirection: "column"
-          }}
-        >
+        <View style={{ flexDirection: "column" }}>
           <Button
             title="Module1"
-            // onPress={this._ModOne}
             onPress={() =>
-              this.props.navigation.navigate("Module", {
-                lang: propLang
+              this.props.navigation.navigate("Quiz", {
+                lang: propLang,
+                mod: 1
               })
             }
-            style={{
-              justifyContent: "flex-start",
-              borderRadius: 25
-            }}
+            style={{ justifyContent: "flex-start", borderRadius: 25 }}
           />
           <Button
             title="Module2"
-            onPress={this._ModOne}
+            onPress={() =>
+              this.props.navigation.navigate("Quiz", {
+                lang: propLang,
+                mod: 2
+              })
+            }
             style={{
               justifyContent: "",
               borderRadius: 25
             }}
           />
-
           <Button
             title="Module3"
-            onPress={this._ModOne}
+            onPress={() =>
+              this.props.navigation.navigate("Quiz", {
+                lang: propLang,
+                mod: 3
+              })
+            }
             style={{
               justifyContent: "",
               borderRadius: 25
@@ -117,7 +118,12 @@ class Module extends React.Component {
           />
           <Button
             title="Module4"
-            onPress={this._ModOne}
+            onPress={() =>
+              this.props.navigation.navigate("Quiz", {
+                lang: propLang,
+                mod: 4
+              })
+            }
             style={{
               justifyContent: "flex-end",
               borderRadius: 25
@@ -128,4 +134,3 @@ class Module extends React.Component {
     );
   }
 }
-export default Module;

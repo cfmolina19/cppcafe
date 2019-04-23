@@ -58,12 +58,10 @@ class Module extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      module: 1,
       page: 1
     };
     this._NextPage = this._NextPage.bind(this);
     this._LastPage = this._LastPage.bind(this);
-    this._NextModule = this._NextModule.bind(this);
   }
 
   _NextPage() {
@@ -78,16 +76,10 @@ class Module extends React.Component {
     });
   }
 
-  _NextModule() {
-    this.setState({
-      module: this.state.module + 1,
-      page: 1
-    });
-  }
-
   render() {
     const { navigation } = this.props;
     const propLang = navigation.getParam("lang", "en");
+    const propMod = navigation.getParam("mod", 1);
 
     let lastPageBtn;
     let nextPageBtn;
@@ -103,38 +95,42 @@ class Module extends React.Component {
     if (this.state.page == lang.all.pages) {
       quizBtn = (
         <Button
-          onPress={() => this.props.navigation.navigate("quiz")}
+          onPress={() =>
+            this.props.navigation.navigate("Quiz", {
+              lang: propLang,
+              mod: propMod
+            })
+          }
           title="Quiz"
         />
       );
     }
 
     //NEEDS REWORK - module content rendering
-    if (this.state.module == 1) {
-      lesson = (
-        <Card style={{ flex: 1 }}>
-          <Mod1Cont lang={propLang} page={this.state.page} />
-        </Card>
-      );
+    if (propMod == 1) {
+      lesson = <Mod1Cont lang={propLang} page={this.state.page} />;
     }
 
-    if (this.state.module == 2) {
-      lesson = (
-        <Card style={{ flex: 1 }}>
-          <Mod2Cont lang={propLang} page={this.state.page} />
-        </Card>
-      );
+    if (propMod == 2) {
+      lesson = <Mod2Cont lang={propLang} page={this.state.page} />;
     }
+
+    // renderLesson(propMod) {
+    // switch (propMod) {
+    //   case "1":
+    //     lesson = <Mod1Cont lang={propLang} page={this.state.page} />;
+    //   case "2":
+    //     lesson = <Mod2Cont lang={propLang} page={this.state.page} />;
+    //   default:
+    //     lesson = <Mod2Cont lang={propLang} page={this.state.page} />;
+    // }
+    // }
 
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>
-          {/* {lang[propLang].title[this.props.mod]} */}
-          {lang[propLang].title[this.state.module]}
-        </Text>
-        <Button title="Next Module" onPress={this._NextModule} />
+        <Text style={styles.title}>{lang[propLang].title[propMod]}</Text>
 
-        {lesson}
+        <Card style={{ flex: 1 }}>{lesson}</Card>
 
         <View style={{ flexDirection: "row", padding: 10 }}>
           <View style={{ flex: 3 }}>{lastPageBtn}</View>

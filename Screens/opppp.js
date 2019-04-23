@@ -9,10 +9,6 @@ export default class App extends React.Component {
   };
 
   render() {
-    const { navigation } = this.props;
-    const propLang = navigation.getParam("lang", "en");
-    const propMod = navigation.getParam("mod", 1);
-
     return (
       <React.Fragment>
         <Header
@@ -21,8 +17,6 @@ export default class App extends React.Component {
           onClear={() => this.setState({ correct: 0, wrong: 0 })}
         />
         <Question
-          lang={propLang}
-          mod={propMod}
           onCorrect={() => this.setState({ correct: this.state.correct + 1 })}
           onWrong={() => this.setState({ wrong: this.state.wrong + 1 })}
         />

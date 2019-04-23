@@ -4,7 +4,7 @@ import { StackNavigator } from "react-navigation";
 import SplashScreen from "./Screens/SplashScreen";
 import Menu from "./Screens/Menu";
 import Module from "./Screens/Module";
-import quiz from "./Screens/quiz";
+import Quiz from "./Screens/Quiz";
 
 export default class App extends React.Component {
   render() {
@@ -16,7 +16,7 @@ const AppNavigator = StackNavigator({
   SplashScreen: { screen: SplashScreen },
   Menu: { screen: Menu },
   Module: { screen: Module },
-  quiz: { screen: quiz }
+  Quiz: { screen: Quiz }
 });
 
 const styles = StyleSheet.create({
