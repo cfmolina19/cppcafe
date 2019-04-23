@@ -3,6 +3,9 @@ import Header from "../components/Header";
 import Question from "../components/Question";
 
 export default class App extends React.Component {
+  static navigationOptions = {
+    title: "<- Module"
+  };
   state = {
     correct: 0,
     wrong: 0

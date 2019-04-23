@@ -170,14 +170,14 @@ const trans = {
           lang: {
             en: ["the main function", "integer", "program", "to include"],
             pt: ["a função principal", "número inteiro", "programa", "incluir"],
-            es: ["Una funcion principal", "Un numero", "un programa", "incluir"]
+            es: ["Un programa", "Un numero", "Una funcion principal", "incluir"]
           }
         },
         2: {
           lang: {
             en: ["M1 EN Q2 C1", "M1 EN 2A", "M1 EN Q2 C3", "M1 EN Q2 C4"],
             pt: ["biblioteca", "função principal", "ferramentas", "void"],
-            es: ["Biblioteca", "Funcion principal", "herramientas", "void"]
+            es: ["void", "Funcion principal", "herramientas", "Biblioteca"]
           }
         },
         3: {
@@ -258,7 +258,7 @@ const trans = {
           lang: {
             en: ["M1 EN 3A", "M1 EN Q3 C2", "M1 EN Q3 C3", "M1 EN Q3 C4"],
             pt: ["void", "string", "char", "int"],
-            es: ["Void", "String", "Char", "Int"]
+            es: ["Char", "String", "Void", "Int"]
           }
         }
       }
@@ -419,7 +419,7 @@ const trans = {
           lang: {
             en: ["M1 EN Q2 C1", "M1 EN 2A", "M1 EN Q2 C3", "M1 EN Q2 C4"],
             pt: ["3", "4", "1", "2"],
-            es: ["3", "4", "1", "2"]
+            es: ["1", "4", "3", "2"]
           }
         },
         3: {
@@ -432,10 +432,10 @@ const trans = {
               "nunca"
             ],
             es: [
-              "Hasta que la condicion no sea cierta",
+              "nunca",
               "Despues de 10 loops",
               "despues de que i incremente",
-              "nunca"
+              "Hasta que la condicion no sea cierta"
             ]
           }
         }

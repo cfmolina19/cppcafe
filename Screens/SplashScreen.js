@@ -37,6 +37,9 @@ const styles = StyleSheet.create({
 });
 
 class SplashScreen extends React.Component {
+  static navigationOptions = {
+    title: ""
+  };
   constructor(props) {
     super(props);
     this.state = {

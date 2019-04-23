@@ -58,6 +58,9 @@ const trans = {
 };
 
 class Module extends React.Component {
+  static navigationOptions = {
+    title: "Menu"
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -115,7 +118,21 @@ class Module extends React.Component {
         </Text>
 
         <Card style={{ flex: 1 }}>
-          <ModuleContent lang={propLang} mod={propMod} page={this.state.page} />
+          <ModuleContent
+            lang={propLang}
+            mod={propMod}
+            page={this.state.page}
+            pagelimit={trans.module[propMod].pages}
+          />
+          {/* trans = {
+                module: {
+                  1: {
+                    title: {
+                      en: "Mod1 Title EN",
+                      pt: "Lição 1 - Introdução\n Olá, Mundo!",
+                      es: "Modulo 1:\nIntroduction\nHola, Mundo!"
+                    },
+                    pages: 8 */}
         </Card>
 
         <View style={{ flexDirection: "row", padding: 10 }}>

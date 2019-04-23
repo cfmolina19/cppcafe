@@ -872,7 +872,7 @@ export default class ModuleContent extends React.Component {
 
         <View style={{ height: "10%" }}>
           <Text>
-            {"\n"}Lesson {this.props.page}/8
+            {"\n"}Lesson {this.props.page}/{this.props.pagelimit}
           </Text>
         </View>
       </View>

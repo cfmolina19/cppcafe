@@ -53,6 +53,9 @@ const lang = {
 };
 
 export default class Menu extends React.Component {
+  static navigationOptions = {
+    title: "Home"
+  };
   constructor(props) {
     super(props);
     this.state = {
