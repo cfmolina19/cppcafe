@@ -1,98 +1,131 @@
-import {
-  LayoutAnimation,
-  Animated,
-  Dimensions,
-  Text,
-  View,
-  StyleSheet,
-  Image,
-  Button
-} from "react-native";
 import React, { Component } from "react";
+import { View, Text, StyleSheet, Button, Alert, Image } from "react-native";
+import { Card } from "react-native-paper";
+import Mod1Cont from "../components/Mod1Cont";
+import Mod2Cont from "../components/Mod2Cont";
 import { Constants } from "expo";
-var { height, width } = Dimensions.get("window");
-// import { withMappedNavigationParams } from "react-navigation-props-mapper";
 
-const itemWidth = width * 0.9;
-const itemHeight = height / 1.25 - Constants.statusBarHeight * 2;
-const fontSize = 300;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: "#D2691E",
+    padding: 10,
+    height: "100%",
+    margin: 0
+  },
+  title: {
+    margin: 24,
+    fontSize: 24,
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  box: { flex: 1, paddingLeft: 5, paddingRight: 5, borderRadius: 25 },
+  box1: {
+    backgroundColor: "red"
+  },
+  box2: {
+    backgroundColor: "blue"
+  },
+  box3: {
+    backgroundColor: "yellow"
+  },
+  box4: {
+    backgroundColor: "green"
+  }
+});
 
 const lang = {
+  all: {
+    pages: 8
+  },
   en: {
-    title: "english"
+    sel: "english",
+    title: "Menu"
   },
   pt: {
-    title: "portuguese"
+    sel: "portuguese",
+    title: "Menu"
   },
   es: {
-    title: "spanish"
+    sel: "spanish",
+    title: "Menú"
   }
 };
 
-export default class Menu extends Component {
+class Module extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      module: ""
+      module: 1,
+      page: 1
     };
+
+    this._ModOne = this._ModOne.bind(this);
   }
 
-  setLanguage = "en";
+  _ModOne() {
+    this.setState({
+      // page: this.state.page + 1,
+      module: 1
+    });
+  }
 
   render() {
     const { navigation } = this.props;
-    const lang = navigation.getParam("lang", "notpassing");
+    const propLang = navigation.getParam("lang", "en");
 
     return (
       <View style={styles.container}>
-        <View style={[styles.border]}>
-          <Text>Module Menu {lang}</Text>
+        <Text style={styles.title}>{lang[propLang].title}</Text>
+
+        <View
+          style={{
+            flexDirection: "column"
+          }}
+        >
           <Button
+            title="Module1"
+            // onPress={this._ModOne}
             onPress={() =>
               this.props.navigation.navigate("Module", {
-                lang: { lang },
-                mod: this.state.module
+                lang: propLang
               })
             }
-            title="Module 1"
+            style={{
+              justifyContent: "flex-start",
+              borderRadius: 25
+            }}
+          />
+          <Button
+            title="Module2"
+            onPress={this._ModOne}
+            style={{
+              justifyContent: "",
+              borderRadius: 25
+            }}
+          />
+
+          <Button
+            title="Module3"
+            onPress={this._ModOne}
+            style={{
+              justifyContent: "",
+              borderRadius: 25
+            }}
+          />
+          <Button
+            title="Module4"
+            onPress={this._ModOne}
+            style={{
+              justifyContent: "flex-end",
+              borderRadius: 25
+            }}
           />
         </View>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: Constants.statusBarHeight
-  },
-  border: {
-    borderRadius: 4,
-    borderWidth: 0,
-    borderColor: "coral",
-    margin: 3
-  },
-  emptyItem: {
-    overflow: "hidden",
-    height: itemHeight,
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    borderLeftWidth: 20,
-    borderColor: "white",
-    width: itemWidth,
-    //backgroundColor: 'transparent',
-    backgroundColor: "#D2691E"
-  },
-  heading: {
-    fontSize: 22,
-    fontWeight: "300",
-    alignSelf: "flex-start",
-    paddingHorizontal: 10,
-    paddingVertical: 10
-  }
-});
+export default Module;

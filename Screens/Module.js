@@ -95,10 +95,10 @@ class Module extends React.Component {
     let lesson;
 
     if (this.state.page > 1) {
-      lastPageBtn = <Button title="Last Page" onPress={this._LastPage} />;
+      lastPageBtn = <Button title="Previous" onPress={this._LastPage} />;
     }
     if (this.state.page < lang.all.pages) {
-      nextPageBtn = <Button title="Next Page" onPress={this._NextPage} />;
+      nextPageBtn = <Button title="Next" onPress={this._NextPage} />;
     }
     if (this.state.page == lang.all.pages) {
       quizBtn = (

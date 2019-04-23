@@ -72,7 +72,11 @@ class SplashScreen extends React.Component {
           <Button
             onPress={() =>
               //going to mod 1 instead of Menu for now
-              this.props.navigation.navigate("Module", {
+              // this.props.navigation.navigate("Module", {
+              //   lang: this.state.lang
+              // })
+
+              this.props.navigation.navigate("Menu", {
                 lang: this.state.lang
               })
             }
@@ -89,13 +93,13 @@ class SplashScreen extends React.Component {
             <View
               style={{
                 flex: 1,
-                paddingLeft: 10,
-                paddingRight: 10,
+                paddingLeft: 5,
+                paddingRight: 5,
                 borderRadius: 25
               }}
             >
               <Button
-                title="PT"
+                title="Portuguese"
                 onPress={this._LangPT}
                 style={{
                   justifyContent: "flex-start",
@@ -107,13 +111,13 @@ class SplashScreen extends React.Component {
             <View
               style={{
                 flex: 1,
-                paddingLeft: 10,
-                paddingRight: 10,
+                paddingLeft: 5,
+                paddingRight: 5,
                 borderRadius: 25
               }}
             >
               <Button
-                title="ES"
+                title="Spanish"
                 onPress={this._LangES}
                 style={{
                   justifyContent: "flex-end",
