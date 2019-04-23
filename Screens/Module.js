@@ -25,70 +25,37 @@ const trans = {
     1: {
       title: {
         en: "Mod1 Title EN",
-        pt: "Mod1 Title PT",
-        es: "Mod1 Title ES"
+        pt: "Lição 1 - Introdução\n Olá, Mundo!",
+        es: "Modulo 1:\nIntroduction\nHola, Mundo!"
       },
       pages: 8
     },
     2: {
       title: {
         en: "Mod2 Title EN",
-        pt: "Mod2 Title PT",
-        es: "Mod2 Title ES"
+        pt: "Lição 2 -\nVariaveis e Tipos\nDeclarações Condicionais",
+        es: "Modulo 2:\nVariables y Tipos\nDeclaraciones Condicionales"
       },
-      pages: 8
+      pages: 7
     },
     3: {
       title: {
         en: "Mod3 Title EN",
-        pt: "Mod3 Title PT",
-        es: "Mod3 Title ES"
+        pt: "Lição 3 -\nArrays\nStrings",
+        es: "Modulo 3:\nArrays y Strings"
       },
-      pages: 8
+      pages: 5
     },
     4: {
       title: {
         en: "Mod4 Title EN",
-        pt: "Mod4 Title PT",
-        es: "Mod4 Title ES"
+        pt: "Lição 4 - Loops\nFor loops\nWhile loops",
+        es: "Modulo 4:\nLoops, For Loops, While Loops"
       },
-      pages: 8
+      pages: 4
     }
   }
 };
-
-// const lang = {
-//   all: {
-//     pages: 8
-//   },
-//   en: {
-//     sel: "english",
-//     title: {
-//       1: "Module 1 - Introduction",
-//       2: "Module 2 - Data Types, Variables, Conditional Statements",
-//       3: "Module 3 - Arrays, Strings",
-//       4: "Module 4 - Loops"
-//     }
-//   },
-//   pt: {
-//     sel: "portuguese",
-//     title: {
-//       1: "Module 1 - Introduction",
-//       2: "Module 2 - Data Types, Variables, Conditional Statements",
-//       3: "Module 3 - Arrays, Strings",
-//       4: "Module 4 - Loops"
-//     }
-//   },
-//   es: {
-//     sel: "spanish",
-//     title: {
-//       1: "Module 1 - Introduction",
-//       2: "Module 2 - Data Types, Variables, Conditional Statements",
-//       3: "Module 3 - Arrays, Strings",
-//       4: "Module 4 - Loops"
-//     }
-//   }
-// };
 
 class Module extends React.Component {
   constructor(props) {
@@ -120,13 +87,11 @@ class Module extends React.Component {
     let lastPageBtn;
     let nextPageBtn;
     let quizBtn;
-    let lesson;
 
     if (this.state.page > 1) {
       lastPageBtn = <Button title="Previous" onPress={this._LastPage} />;
     }
     if (this.state.page < trans.module[propMod].pages) {
-      // if (this.state.page < lang.all.pages) {
       nextPageBtn = <Button title="Next" onPress={this._NextPage} />;
     }
     if (this.state.page == trans.module[propMod].pages) {
@@ -142,29 +107,6 @@ class Module extends React.Component {
         />
       );
     }
-
-    //NEEDS REWORK - module content rendering
-    // if (propMod == 1) {
-    // lesson = <Mod1Cont lang={propLang} page={this.state.page} />;
-    // lesson = (
-    //   <ModuleContent lang={propLang} mod={propMod} page={this.state.page} />
-    // );
-    // }
-
-    // if (propMod == 2) {
-    //   lesson = <Mod2Cont lang={propLang} page={this.state.page} />;
-    // }
-
-    // renderLesson(propMod) {
-    // switch (propMod) {
-    //   case "1":
-    //     lesson = <Mod1Cont lang={propLang} page={this.state.page} />;
-    //   case "2":
-    //     lesson = <Mod2Cont lang={propLang} page={this.state.page} />;
-    //   default:
-    //     lesson = <Mod2Cont lang={propLang} page={this.state.page} />;
-    // }
-    // }
 
     return (
       <View style={styles.container}>

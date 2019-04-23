@@ -18,8 +18,8 @@ export default class Question extends React.Component {
   }
 
   render() {
-    let mod = this.props.mod;
-    let lang = this.props.lang;
+    let propsMod = this.props.mod;
+    let propsLang = this.props.lang;
 
     return (
       <View style={styles.flex1}>
@@ -120,23 +120,23 @@ const trans = {
         //questions
         1: {
           lang: {
-            en: "M1 EN 1Q",
-            pt: "M1 PT 1Q",
-            es: "M1 ES 1Q"
+            en: "What does main mean?",
+            pt: "Que significa main?",
+            es: "Que significa main?"
           }
         },
         2: {
           lang: {
-            en: "M1 EN 2Q",
-            pt: "M1 PT 2Q",
-            es: "M1 ES 2Q"
+            en: "What is a library?",
+            pt: "Que significa library?",
+            es: "Que significa library?"
           }
         },
         3: {
           lang: {
-            en: "M1 EN 3Q",
-            pt: "M1 PT 3Q",
-            es: "M1 ES 3Q"
+            en: "What is at the end of the function body? ",
+            pt: "Como contém um corpo de uma função? ",
+            es: "Que esta a lo ultimo de una funcion?"
           }
         }
       },
@@ -144,23 +144,23 @@ const trans = {
         //answers
         1: {
           lang: {
-            en: "M1 EN 1A",
-            pt: "M1 PT 1A",
-            es: "M1 ES 1A"
+            en: "the main function",
+            pt: "a função principal",
+            es: "Una funcion principal"
           }
         },
         2: {
           lang: {
             en: "M1 EN 2A",
-            pt: "M1 PT 2A",
-            es: "M1 ES 2A"
+            pt: "biblioteca",
+            es: "Biblioteca"
           }
         },
         3: {
           lang: {
-            en: "M1 EN 3A",
-            pt: "M1 PT 3A",
-            es: "M1 ES 3A"
+            en: "{...}",
+            pt: "{...}",
+            es: "{...}"
           }
         }
       },
@@ -168,23 +168,275 @@ const trans = {
         //choices
         1: {
           lang: {
-            en: ["M1 EN Q1 C1", "M1 EN Q1 C2", "M1 EN Q1 C3", "M1 EN 1A"],
-            pt: "M1 PT 1A",
-            es: "M1 ES 1A"
+            en: ["the main function", "integer", "program", "to include"],
+            pt: ["a função principal", "número inteiro", "programa", "incluir"],
+            es: ["Una funcion principal", "Un numero", "un programa", "incluir"]
           }
         },
         2: {
           lang: {
             en: ["M1 EN Q2 C1", "M1 EN 2A", "M1 EN Q2 C3", "M1 EN Q2 C4"],
-            pt: "M1 PT 2A",
-            es: "M1 ES 2A"
+            pt: ["biblioteca", "função principal", "ferramentas", "void"],
+            es: ["Biblioteca", "Funcion principal", "herramientas", "void"]
+          }
+        },
+        3: {
+          lang: {
+            en: ["{...}", "[...]", "(...)", ";...;"],
+            pt: ["{...}", "[...]", "(...)", ";...;"],
+            es: ["{...}", "[...]", "(...)", ";...;"]
+          }
+        }
+      }
+    },
+    2: {
+      q: {
+        //questions
+        1: {
+          lang: {
+            en: "",
+            pt: "Quais desses não é um tipo? \n Int, String, Char, variable",
+            es: "Cual de estos no es un tipo? Int, String, Char, Variable"
+          }
+        },
+        2: {
+          lang: {
+            en: "",
+            pt: "if and else são parte de ...",
+            es: "If y Else es parte de un... "
+          }
+        },
+        3: {
+          lang: {
+            en: "",
+            pt: "Qual função não returna nada?",
+            es: "Cual tipo de funcion no devuelve nada?"
+          }
+        }
+      },
+      a: {
+        //answers
+        1: {
+          lang: {
+            en: "",
+            pt: "variavel",
+            es: "Variable"
+          }
+        },
+        2: {
+          lang: {
+            en: "M1 EN 2A",
+            pt: "declaração conditional",
+            es: "Declaracion condicional"
+          }
+        },
+        3: {
+          lang: {
+            en: "M1 EN 3A",
+            pt: "void",
+            es: "Void"
+          }
+        }
+      },
+      c: {
+        //choices
+        1: {
+          lang: {
+            en: ["the main function", "integer", "program", "to include"],
+            pt: ["variavel", "String", "Char", "Int"],
+            es: ["Variable", "String", "Char", "Int"]
+          }
+        },
+        2: {
+          lang: {
+            en: ["M1 EN Q2 C1", "M1 EN 2A", "M1 EN Q2 C3", "M1 EN Q2 C4"],
+            pt: ["declaração conditional", "main", "tipo", "variavel"],
+            es: ["Condicional Statement", "Main", "Tipo", "Variable"]
           }
         },
         3: {
           lang: {
             en: ["M1 EN 3A", "M1 EN Q3 C2", "M1 EN Q3 C3", "M1 EN Q3 C4"],
-            pt: "M1 PT 3A",
-            es: "M1 ES 3A"
+            pt: ["void", "string", "char", "int"],
+            es: ["Void", "String", "Char", "Int"]
+          }
+        }
+      }
+    },
+    3: {
+      q: {
+        //questions
+        1: {
+          lang: {
+            en: "",
+            pt: "O que é um String?",
+            es: "Que es un String?"
+          }
+        },
+        2: {
+          lang: {
+            en: "",
+            pt: "O que é um Array?",
+            es: "Que es un Array?"
+          }
+        },
+        3: {
+          lang: {
+            en: "",
+            pt: "Qual é o terceiro elemento?",
+            es: "Cual es el tercer elemento del String - word?"
+          }
+        }
+      },
+      a: {
+        //answers
+        1: {
+          lang: {
+            en: "",
+            pt: "Coleção das letras",
+            es: "coleccion de letras"
+          }
+        },
+        2: {
+          lang: {
+            en: "",
+            pt: "uma estrutura de datos",
+            es: "una estructura de datos"
+          }
+        },
+        3: {
+          lang: {
+            en: "",
+            pt: "d",
+            es: "d"
+          }
+        }
+      },
+      c: {
+        //choices
+        1: {
+          lang: {
+            en: ["the main function", "integer", "program", "to include"],
+            pt: [
+              "Coleção das letras",
+              "incluir",
+              " uma estrutura de datos",
+              "um tipo"
+            ],
+            es: [
+              "coleccion de letras",
+              "incluir",
+              "una estructura de datos",
+              "un tipo"
+            ]
+          }
+        },
+        2: {
+          lang: {
+            en: ["M1 EN Q2 C1", "M1 EN 2A", "M1 EN Q2 C3", "M1 EN Q2 C4"],
+            pt: [
+              "uma estrutura de datos",
+              "Coleção das letras",
+              "compilar",
+              "uma função"
+            ],
+            es: [
+              "una estructura de datos",
+              "coleccion de letras",
+              "compilar",
+              "una funcion"
+            ]
+          }
+        },
+        3: {
+          lang: {
+            en: ["M1 EN 3A", "M1 EN Q3 C2", "M1 EN Q3 C3", "M1 EN Q3 C4"],
+            pt: ["d", "w", "o", "r"],
+            es: ["d", "w", "o", "r"]
+          }
+        }
+      }
+    },
+    4: {
+      q: {
+        //questions
+        1: {
+          lang: {
+            en: "",
+            pt: "Que significa fazer um loop?",
+            es: "Que significa hacer un loop?"
+          }
+        },
+        2: {
+          lang: {
+            en: "",
+            pt: "Quantas partes têm um for loop?",
+            es: "Cuantas partes tiene un for loop?"
+          }
+        },
+        3: {
+          lang: {
+            en: "",
+            pt: "Até quando executa um while loop?",
+            es: "Que esta a lo ultimo de una funcion?"
+          }
+        }
+      },
+      a: {
+        //answers
+        1: {
+          lang: {
+            en: "",
+            pt: "Repetir",
+            es: "Repetir"
+          }
+        },
+        2: {
+          lang: {
+            en: "M1 EN 2A",
+            pt: "3",
+            es: "3"
+          }
+        },
+        3: {
+          lang: {
+            en: "",
+            pt: "Até que a condição não seja satisfeita",
+            es: "Hasta que la condicion no sea cierta"
+          }
+        }
+      },
+      c: {
+        //choices
+        1: {
+          lang: {
+            en: ["the main function", "integer", "program", "to include"],
+            pt: ["Repetir", "Continuar", "estructura de dato", "um tipo"],
+            es: ["Repetir", "Continuar", "estructura de dato", "un tipo"]
+          }
+        },
+        2: {
+          lang: {
+            en: ["M1 EN Q2 C1", "M1 EN 2A", "M1 EN Q2 C3", "M1 EN Q2 C4"],
+            pt: ["3", "4", "1", "2"],
+            es: ["3", "4", "1", "2"]
+          }
+        },
+        3: {
+          lang: {
+            en: ["M1 EN 3A", "M1 EN Q3 C2", "M1 EN Q3 C3", "M1 EN Q3 C4"],
+            pt: [
+              "Até que a condição não seja satisfeita",
+              "Depois de 10 loops",
+              "depois de que i incremente",
+              "nunca"
+            ],
+            es: [
+              "Hasta que la condicion no sea cierta",
+              "Despues de 10 loops",
+              "despues de que i incremente",
+              "nunca"
+            ]
           }
         }
       }
