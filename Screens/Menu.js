@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Button, Alert, Image } from "react-native";
 import { Card } from "react-native-paper";
-import Mod1Cont from "../components/Mod1Cont";
-import Mod2Cont from "../components/Mod2Cont";
 import { Constants } from "expo";
 
 const styles = StyleSheet.create({
@@ -83,7 +81,7 @@ export default class Menu extends React.Component {
           <Button
             title="Module1"
             onPress={() =>
-              this.props.navigation.navigate("Quiz", {
+              this.props.navigation.navigate("Module", {
                 lang: propLang,
                 mod: 1
               })
@@ -93,7 +91,7 @@ export default class Menu extends React.Component {
           <Button
             title="Module2"
             onPress={() =>
-              this.props.navigation.navigate("Quiz", {
+              this.props.navigation.navigate("Module", {
                 lang: propLang,
                 mod: 2
               })
@@ -106,7 +104,7 @@ export default class Menu extends React.Component {
           <Button
             title="Module3"
             onPress={() =>
-              this.props.navigation.navigate("Quiz", {
+              this.props.navigation.navigate("Module", {
                 lang: propLang,
                 mod: 3
               })
@@ -119,7 +117,7 @@ export default class Menu extends React.Component {
           <Button
             title="Module4"
             onPress={() =>
-              this.props.navigation.navigate("Quiz", {
+              this.props.navigation.navigate("Module", {
                 lang: propLang,
                 mod: 4
               })

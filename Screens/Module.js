@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Button, Alert, Image } from "react-native";
 import { Card } from "react-native-paper";
-import Mod1Cont from "../components/Mod1Cont";
-import Mod2Cont from "../components/Mod2Cont";
+import ModuleContent from "../components/ModuleContent";
 import { Constants } from "expo";
 
 const styles = StyleSheet.create({
@@ -21,38 +20,75 @@ const styles = StyleSheet.create({
   }
 });
 
-const lang = {
-  all: {
-    pages: 8
-  },
-  en: {
-    sel: "english",
-    title: {
-      1: "Module 1 - Introduction",
-      2: "Module 2 - Data Types, Variables, Conditional Statements",
-      3: "Module 3 - Arrays, Strings",
-      4: "Module 4 - Loops"
-    }
-  },
-  pt: {
-    sel: "portuguese",
-    title: {
-      1: "Module 1 - Introduction",
-      2: "Module 2 - Data Types, Variables, Conditional Statements",
-      3: "Module 3 - Arrays, Strings",
-      4: "Module 4 - Loops"
-    }
-  },
-  es: {
-    sel: "spanish",
-    title: {
-      1: "Module 1 - Introduction",
-      2: "Module 2 - Data Types, Variables, Conditional Statements",
-      3: "Module 3 - Arrays, Strings",
-      4: "Module 4 - Loops"
+const trans = {
+  module: {
+    1: {
+      title: {
+        en: "Mod1 Title EN",
+        pt: "Mod1 Title PT",
+        es: "Mod1 Title ES"
+      },
+      pages: 8
+    },
+    2: {
+      title: {
+        en: "Mod2 Title EN",
+        pt: "Mod2 Title PT",
+        es: "Mod2 Title ES"
+      },
+      pages: 8
+    },
+    3: {
+      title: {
+        en: "Mod3 Title EN",
+        pt: "Mod3 Title PT",
+        es: "Mod3 Title ES"
+      },
+      pages: 8
+    },
+    4: {
+      title: {
+        en: "Mod4 Title EN",
+        pt: "Mod4 Title PT",
+        es: "Mod4 Title ES"
+      },
+      pages: 8
     }
   }
 };
+
+// const lang = {
+//   all: {
+//     pages: 8
+//   },
+//   en: {
+//     sel: "english",
+//     title: {
+//       1: "Module 1 - Introduction",
+//       2: "Module 2 - Data Types, Variables, Conditional Statements",
+//       3: "Module 3 - Arrays, Strings",
+//       4: "Module 4 - Loops"
+//     }
+//   },
+//   pt: {
+//     sel: "portuguese",
+//     title: {
+//       1: "Module 1 - Introduction",
+//       2: "Module 2 - Data Types, Variables, Conditional Statements",
+//       3: "Module 3 - Arrays, Strings",
+//       4: "Module 4 - Loops"
+//     }
+//   },
+//   es: {
+//     sel: "spanish",
+//     title: {
+//       1: "Module 1 - Introduction",
+//       2: "Module 2 - Data Types, Variables, Conditional Statements",
+//       3: "Module 3 - Arrays, Strings",
+//       4: "Module 4 - Loops"
+//     }
+//   }
+// };
 
 class Module extends React.Component {
   constructor(props) {
@@ -89,10 +125,11 @@ class Module extends React.Component {
     if (this.state.page > 1) {
       lastPageBtn = <Button title="Previous" onPress={this._LastPage} />;
     }
-    if (this.state.page < lang.all.pages) {
+    if (this.state.page < trans.module[propMod].pages) {
+      // if (this.state.page < lang.all.pages) {
       nextPageBtn = <Button title="Next" onPress={this._NextPage} />;
     }
-    if (this.state.page == lang.all.pages) {
+    if (this.state.page == trans.module[propMod].pages) {
       quizBtn = (
         <Button
           onPress={() =>
@@ -107,13 +144,16 @@ class Module extends React.Component {
     }
 
     //NEEDS REWORK - module content rendering
-    if (propMod == 1) {
-      lesson = <Mod1Cont lang={propLang} page={this.state.page} />;
-    }
+    // if (propMod == 1) {
+    // lesson = <Mod1Cont lang={propLang} page={this.state.page} />;
+    // lesson = (
+    //   <ModuleContent lang={propLang} mod={propMod} page={this.state.page} />
+    // );
+    // }
 
-    if (propMod == 2) {
-      lesson = <Mod2Cont lang={propLang} page={this.state.page} />;
-    }
+    // if (propMod == 2) {
+    //   lesson = <Mod2Cont lang={propLang} page={this.state.page} />;
+    // }
 
     // renderLesson(propMod) {
     // switch (propMod) {
@@ -128,9 +168,13 @@ class Module extends React.Component {
 
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>{lang[propLang].title[propMod]}</Text>
+        <Text style={styles.title}>
+          {trans.module[propMod].title[propLang]}
+        </Text>
 
-        <Card style={{ flex: 1 }}>{lesson}</Card>
+        <Card style={{ flex: 1 }}>
+          <ModuleContent lang={propLang} mod={propMod} page={this.state.page} />
+        </Card>
 
         <View style={{ flexDirection: "row", padding: 10 }}>
           <View style={{ flex: 3 }}>{lastPageBtn}</View>
