@@ -4,7 +4,7 @@ import Question from "../components/Question";
 
 export default class App extends React.Component {
   static navigationOptions = {
-    title: "<- Module"
+    title: "Module"
   };
   state = {
     correct: 0,

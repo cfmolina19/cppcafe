@@ -140,6 +140,20 @@ class SplashScreen extends React.Component {
             />
           </Card>
         </View>
+
+        <View style={{ flex: 1, borderRadius: 25 }}>
+          <Button
+            onPress={() =>
+              this.props.navigation.navigate("About", {
+                lang: this.state.lang
+              })
+            }
+            title="About"
+            style={{
+              borderRadius: 25
+            }}
+          />
+        </View>
       </View>
     );
   }
